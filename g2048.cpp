@@ -1,23 +1,16 @@
 #include <bits/stdc++.h>
 using namespace std;
 
-int Xn = 0;
-
-int generate_random_no()
-{
-    Xn = ((75 * Xn) + 74) % (1<<16 | 1);
-    return Xn;
-}
 
 pair<int, pair<int, int>> getRandom_value_and_place(vector<pair<int, int>> &Empty_cells)
 {
     int min = 0, max = (int)Empty_cells.size() - 1;
-    int pos = (generate_random_no() % (max - min + 1)) + min;
+    int pos = (rand() % (max - min + 1)) + min;
 
     sort(Empty_cells.begin(), Empty_cells.end());
 
     min = 1, max = 10;
-    int value = (generate_random_no() % (max - min + 1)) + min;
+    int value = (rand() % (max - min + 1)) + min;
 
     if (value <= 8)
         return make_pair(2, Empty_cells[pos]);
@@ -195,14 +188,6 @@ int check_board()
     return 2;
 }
 
-
-void initialize()
-{
-    memset(board, 0, sizeof(board));
-    no_empty_cells = 16;
-fill_random_cell();
-fill_random_cell();
-}
 struct game
 {
     game(){};
@@ -210,7 +195,10 @@ struct game
     void play()
     {
         int n; cin >> n;
-        initialize();
+       memset(board, 0, sizeof(board));
+       no_empty_cells = 16;
+       fill_random_cell();
+       fill_random_cell();
         print();
 
         for(int i=0; i<n; i++)
