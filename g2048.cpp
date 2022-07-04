@@ -38,7 +38,7 @@ void print()
                 cout<<".  ";
             else
                 cout<<board[i][j]<<"  ";
-           
+
         } cout<<"\n";
     }
 }
@@ -85,7 +85,7 @@ bool move(int direction)
     bool change = false;
     vector<int> curr;
 
-    
+
     if (direction == 1)
     {
         for (int i = 0; i < 4; i++)
@@ -95,7 +95,7 @@ bool move(int direction)
                 curr.push_back(board[i][j]);
 
             change |= push_left(curr);
-            
+
             for (int j = 3; j >= 0; j--)
             {
                 board[i][j] = curr.back();
@@ -225,7 +225,7 @@ struct game
                 continue;
             }
 
-        generate_random_no();
+        fill_random_cell();
             print();
 
             int gameStatus = check_board();
