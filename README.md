@@ -1,8 +1,12 @@
+
+g2048
+
 Direction Value	1	2	3	4
-Move to perform	Left	Down	Right	Up
+Move to perform	Left	Down	Right	Up.
+
 Enter n to play in finite steps denoting the number of moves in the input.
 Next 
-N
+n
  lines contain an integer 
 {
 1
