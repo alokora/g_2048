@@ -190,7 +190,10 @@ int check_board()
 
 struct game
 {
-    game(){};
+    game(){
+        cout<<"left=1  down=2  rignt=3  up=4\n";
+        cout<<"Enter no of moves \n";
+        };
 
     void play()
     {
@@ -233,7 +236,7 @@ struct game
 };
 int main()
 {
+  
    game g_2048;
-    g_2048.play();
-    return 0;
+    g_2048.play();return 0;
 }
